@@ -1,0 +1,29 @@
+{
+  "name": "encode-decode-suite",
+  "version": "1.0.0",
+  "description": "Encodes and decodes some of the web's most commonly used formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unkani/encode-decode-suite.git"
+  },
+  "keywords": [
+    "encode",
+    "decode",
+    "codec",
+    "base64",
+    "jwt",
+    "hex",
+    "html",
+    "binary"
+  ],
+  "author": "Neil Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unkani/encode-decode-suite/issues"
+  },
+  "homepage": "https://github.com/unkani/encode-decode-suite#readme"
+}
