@@ -10,3 +10,7 @@ input.codec-button.active, input.codec-button.active:hover, input.codec-button.a
   border-color: DODGERBLUE;
   background-color: DODGERBLUE;
 }
+
+#codec-message{
+  padding: 1em 0;
+}
