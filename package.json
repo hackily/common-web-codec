@@ -4,7 +4,9 @@
   "description": "Encodes and decodes some of the web's most commonly used formats",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify ./src/scripts/app.js -o ./app/scripts/bundle.js",
+    "watch": "watchify ./src/scripts/app.js -o ./app/scripts/bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/unkani/encode-decode-suite/issues"
   },
-  "homepage": "https://github.com/unkani/encode-decode-suite#readme"
+  "homepage": "https://github.com/unkani/encode-decode-suite#readme",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "jwt-simple": "^0.5.1"
+  }
 }
