@@ -2,6 +2,7 @@ const codecs = require('./codec');
 const config = require('./appConfig');
 const logger = require('./logger');
 
+
 let selectedCodec = null;
 let codecDirection = true;
 let inputTimeDelay = config.inputTimer;
@@ -89,28 +90,37 @@ module.exports.generateCodecOptionButtons = function(target){
 			logError("You must select a codec to use!");
 			return;
 		}
+		if(selectedCodec === 'LZ COMPRESS'){
+					codecs.format[selectedCodec](codecDirection, resizeTextArea)
+					return;
+			}
 		codecs.format[selectedCodec](codecDirection);
 		
 	};
 
 
 
-	function trackTyping(event){
+	const trackTyping = function(event){
 		//If the directionality does not match with the textarea that just received an input, switch the direction.
 		if((codecDirection === true && event.target === decode) || (codecDirection === false && event.target === encode)) {
 			reverseCodecDirection();
 		}
-
-
-
+		
 		//Delay is customizable in appConfig.json
 		clearTimeout(timeOut);
 		timeOut = setTimeout(function(){
 			runCodec(false);
-			let eHeight = encode.scrollHeight;
-			let dHeight = decode.scrollHeight;
-			encode.setAttribute('style','height:'+eHeight+'px');
-			decode.setAttribute('style','height:'+dHeight+'px');
+			resizeTextArea();
 
 		}, inputTimeDelay)
+	}
+
+	const resizeTextArea = function(){
+		encode.style.height = 0;
+		decode.style.height = 0;
+
+		let eHeight = encode.scrollHeight;
+		let dHeight = decode.scrollHeight;
+		encode.setAttribute('style','height:'+eHeight+'px');
+		decode.setAttribute('style','height:'+dHeight+'px');
 	}
