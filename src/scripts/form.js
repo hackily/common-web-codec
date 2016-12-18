@@ -49,6 +49,7 @@ module.exports.generateCodecOptionButtons = function(target){
 			codecCache[selectedCodec+'decode'] = decode.value;
 			encode.value = codecCache[event.target.value+'encode'] === undefined ? '' : codecCache[event.target.value+'encode'];
 			decode.value = codecCache[event.target.value+'encode'] === undefined ? '' : codecCache[event.target.value+'decode'];
+			resizeTextArea();
 
 			removeActiveClassFromChildren(event.target.parentNode);
 			event.target.classList.add('active');
