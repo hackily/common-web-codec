@@ -7,8 +7,8 @@
     "start": "http-server ./app | npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -v",
-    "build-js": "browserify -t babelify -g uglify-js-harmony -c ./src/scripts/startup.js -o ./app/scripts/bundle.js",
-    "jss": "browserify -t babelify -g uglify-js-harmony ./src/scripts/startup.js > ./app/scripts/bundle.js",
+    "build-js": "browserify ./src/scripts/startup.js  -t [ babelify --presets [ es2015 ] ] && uglifyjs ./app/scripts/bundle.js -c -m -o ./app/scripts/bundle.js",
+    "jss": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -t babelify && uglifyjs ./app/scripts/bundle.js --compress",
     "watch": "watchify ./src/scripts/startup.js -d -o ./app/scripts/bundle.js -v",
     "build": "npm run build-js"
   },
@@ -34,11 +34,14 @@
   "homepage": "https://github.com/unkani/encode-decode-suite#readme",
   "devDependencies": {
     "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "exorcist": "^0.4.0",
     "http-server": "^0.9.0",
     "uglify-js-harmony": "^2.6.2",
+    "uglifyify": "^3.0.4",
+    "uglifyjs": "^2.4.10",
     "watchify": "^3.8.0"
   },
   "dependencies": {

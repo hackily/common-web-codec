@@ -81,7 +81,7 @@ module.exports.generateCodecOptionButtons = function(target){
 	}
 	const updateCodecDirection = function(){
 		console.log(codecDirectionButton);
-		codecDirectionButton.textContent = codecDirection ? "->" : "<-";
+		codecDirectionButton.textContent = codecDirection ? "←" : "→";
 		console.log('Codec translation direction is right to left: ' + codecDirection);
 	}
 

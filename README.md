@@ -7,6 +7,7 @@ Encodes and decodes some of the web's most commonly used formats:
 * Hex
 * HTML
 * Binary
+* LZ Compression
 
 ### Use
 Not an npm module at this time. Please visit the webapp to use.
