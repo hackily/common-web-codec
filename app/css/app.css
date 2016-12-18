@@ -1,5 +1,5 @@
 .codec{
-  padding: 10em 0;
+  padding: 5em 0;
 }
 
 input.codec-button{
@@ -13,4 +13,33 @@ input.codec-button.active, input.codec-button.active:hover, input.codec-button.a
 
 #codec-message{
   padding: 1em 0;
+}
+
+#codec-encode, #codec-decode{
+  overflow-y: hidden;
+  size: auto;
+  color: black;
+}
+#codec-direction{
+  background-color: white;
+}
+
+body{
+background: linear-gradient(51deg, #2661c2, #468bb9);
+background-size: 400% 400%;
+
+-webkit-animation: bg-codec 46s ease infinite;
+animation: bg-codec 46s ease infinite;
+color: white;
+}
+
+@-webkit-keyframes bg-codec {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@keyframes bg-codec { 
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
 }
