@@ -2,9 +2,9 @@
   padding: 5em 0;
 }
 
-  input.button-primary:last-child{
-    margin-right: 0;
-  }
+input.button-primary:last-child{
+  margin-right: 0;
+}
 
 input.codec-button.active, input.codec-button.active:hover, input.codec-button.active:focus{
   border-color: DODGERBLUE;
@@ -22,6 +22,7 @@ input.codec-button.active, input.codec-button.active:hover, input.codec-button.a
 }
 #codec-direction{
   background-color: white;
+  font-size: 20px;
 }
 
 body{

@@ -60,7 +60,7 @@ module.exports.generateCodecOptionButtons = function(target){
 		if(event.target.id === 'codec-translate'){
 			runCodec(false);
 		}
-		if(event.target.id === 'codec-direction'){
+		if(event.target.id === 'codec-direction' || event.target.parentNode.id === 'codec-direction'){
 			reverseCodecDirection(event.target);
 		}
 	}
@@ -80,9 +80,7 @@ module.exports.generateCodecOptionButtons = function(target){
 		updateCodecDirection();
 	}
 	const updateCodecDirection = function(){
-		console.log(codecDirectionButton);
-		codecDirectionButton.textContent = codecDirection ? "←" : "→";
-		console.log('Codec translation direction is right to left: ' + codecDirection);
+		codecDirectionButton.getElementsByTagName('div')[0].style = codecDirection ? 'transform: rotate(0deg); transition: transform 500ms ease;' : 'transform: rotate(180deg); transition: transform 500ms ease;';
 	}
 
 	const runCodec = function(userInitiated){

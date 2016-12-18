@@ -7,8 +7,7 @@
     "start": "http-server ./app | npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -v",
-    "build-js": "browserify ./src/scripts/startup.js  -t [ babelify --presets [ es2015 ] ] && uglifyjs ./app/scripts/bundle.js -c -m -o ./app/scripts/bundle.js",
-    "jss": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -t babelify && uglifyjs ./app/scripts/bundle.js --compress",
+    "build-js": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -t [ babelify --presets [ es2015 ] ] && uglifyjs ./app/scripts/bundle.js -c",
     "watch": "watchify ./src/scripts/startup.js -d -o ./app/scripts/bundle.js -v",
     "build": "npm run build-js"
   },
