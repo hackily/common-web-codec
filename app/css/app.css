@@ -1,6 +1,10 @@
 .codec{
   padding: 5em 0;
 }
+input.button-primary{
+  margin: 0 0.5em 0.5em 0;
+  padding: 0 1em;
+}
 
 input.button-primary:last-child{
   margin-right: 0;
@@ -20,9 +24,13 @@ input.codec-button.active, input.codec-button.active:hover, input.codec-button.a
   size: auto;
   color: black;
 }
-#codec-direction{
+button#codec-direction{
   background-color: white;
   font-size: 20px;
+  padding: 0;
+}
+div#codec-direction-arrow{
+  color: black;
 }
 
 body{
@@ -47,15 +55,17 @@ color: white;
 
 /* Larger than mobile */
 @media (min-width: 400px) {
-  input.button-primary{
-    margin: 0 0.5em 0.5em 0;
-    padding: 0 1em;
-  }
+
 
 }
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+  button#codec-direction{
+    transform:translateY(100%)
+  
+  }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {
@@ -73,4 +83,6 @@ color: white;
 }
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+
+}
