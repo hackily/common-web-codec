@@ -1,5 +1,5 @@
 
-# [Common Web Codec](https://unkani.github.io/common-web-codec/app/index.html)
+# [Common Web Codec](https://hackily.github.io/common-web-codec/app/index.html)
 
 Encodes and decodes some of the web's most commonly used formats:
 * JWT
@@ -10,7 +10,8 @@ Encodes and decodes some of the web's most commonly used formats:
 * LZ Compression
 
 ### Use
-Not an npm module at this time. Please visit the webapp to use.
+Please visit the webapp to use. An [NPM module](https://github.com/hackily/coco) is a work in progress.
+
 
 ## Development
 The following shows how to get started with developing on this app
