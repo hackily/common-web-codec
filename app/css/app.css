@@ -1,56 +1,41 @@
-.codec{
+.codec {
   padding: 5em 0;
 }
-input.button-primary{
+input.button-primary {
   margin: 0 0.5em 0.5em 0;
   padding: 0 1em;
 }
 
-input.button-primary:last-child{
+input.button-primary:last-child {
   margin-right: 0;
 }
 
-input.codec-button.active, input.codec-button.active:hover, input.codec-button.active:focus{
+input.codec-button.active, input.codec-button.active:hover, input.codec-button.active:focus {
   border-color: DODGERBLUE;
   background-color: DODGERBLUE;
 }
 
-#codec-message{
+#codec-message {
   padding: 1em 0;
 }
 
-#codec-encode, #codec-decode{
+#codec-encode, #codec-decode {
   overflow-y: hidden;
   size: auto;
   color: black;
 }
-button#codec-direction{
+button#codec-direction {
   background-color: white;
   font-size: 20px;
   padding: 0;
 }
-div#codec-direction-arrow{
+div#codec-direction-arrow {
   color: black;
 }
 
-body{
-background: linear-gradient(51deg, #2661c2, #468bb9);
-background-size: 400% 400%;
-
--webkit-animation: bg-codec 46s ease infinite;
-animation: bg-codec 46s ease infinite;
-color: white;
-}
-
-@-webkit-keyframes bg-codec {
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
-}
-@keyframes bg-codec { 
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
+body {
+  background-color: #2661c2;
+  color: white;
 }
 
 /* Larger than mobile */
