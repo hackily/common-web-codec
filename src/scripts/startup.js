@@ -18,17 +18,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	codecs.setup(encode, decode);
 	form.generateCodecOptionButtons(codecButtonsDiv);
 	form.setupForm(encode, decode, codecDirectionButton);
-
-
-
-
-
-
-
-	/*
-	Event Listeners
-	*/
-
 	
 })
 

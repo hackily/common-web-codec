@@ -17,7 +17,7 @@ let isEncode = null;
 let encode = null;
 let decode = null;
 
-module.exports.setup= function(encodeDiv, decodeDiv){
+module.exports.setup = function(encodeDiv, decodeDiv){
 	encode = encodeDiv;
 	decode = decodeDiv;
 }
@@ -91,6 +91,12 @@ const lzCompress = function(isEncode, fn){
 	}
 }
 
+const translateTime = function(isEncode) {
+	mapIO(isEncode);
+	const payload = isEncode ? new Date(+input).toString() : new Date(input).getTime();
+	output.value = payload;
+}
+
 exports.format = {
 		"JWT": translateJwt,
 		"BASE64": translateBase64,
@@ -98,6 +104,7 @@ exports.format = {
 		"URI": translateUri,	
 		"BINARY": translateBinary,
 		"ASCII": translateAscii,
-		"LZ COMPRESS": lzCompress
+		"LZ COMPRESS": lzCompress,
+		"TIMESTAMP": translateTime
 };
 
