@@ -10,7 +10,8 @@ input.button-primary:last-child {
   margin-right: 0;
 }
 
-input.codec-button.active, input.codec-button.active:hover, input.codec-button.active:focus {
+input.codec-button.active, input.codec-button.active:hover, input.codec-button.active:focus, a.codec-button {
+  color: white;
   border-color: DODGERBLUE;
   background-color: DODGERBLUE;
 }

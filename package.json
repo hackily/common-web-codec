@@ -4,7 +4,7 @@
   "description": "Encodes and decodes some of the web's most commonly used formats",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./app | npm run watch",
+    "start": "http-server ./app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -v",
     "build-js": "browserify ./src/scripts/startup.js -o ./app/scripts/bundle.js -t [ babelify --presets [ es2015 ] ] && uglifyjs ./app/scripts/bundle.js -c",

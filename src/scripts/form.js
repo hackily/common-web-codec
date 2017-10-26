@@ -11,14 +11,17 @@ let encode = null;
 let decode = null;
 let codecDirectionButton = null;
 let codecCache = {};
+let encodeTypeLabel = null;
+let decodeTypeLabel = null;
 
 
-module.exports.setupForm = function(en, de, button){
+module.exports.setupForm = function(en, de, button, encodeType, decodeType){
 
 	encode = en;
 	decode = de;
 	codecDirectionButton = button;
-
+	encodeTypeLabel = encodeType;
+	decodeTypeLabel = decodeType;
 	selectedCodec = document.getElementsByClassName('active')[0].value;
 	encode.parentNode.parentNode.addEventListener('input', trackTyping);
 }
@@ -42,7 +45,7 @@ module.exports.generateCodecOptionButtons = function(target){
 		target.parentNode.addEventListener("click", activateButton);
 	}
 
-	const activateButton = function(event){
+	const activateButton = (event) => {
 		logger.clear();
 		if(event.target.classList.contains('codec-button')){
 			codecCache[selectedCodec+'encode'] = encode.value;
@@ -54,6 +57,8 @@ module.exports.generateCodecOptionButtons = function(target){
 			removeActiveClassFromChildren(event.target.parentNode);
 			event.target.classList.add('active');
 			selectedCodec = event.target.value;
+			encodeTypeLabel.textContent = codecs.format[selectedCodec].encode;
+			decodeTypeLabel.textContent = codecs.format[selectedCodec].decode;
 
 
 
@@ -89,11 +94,8 @@ module.exports.generateCodecOptionButtons = function(target){
 			logError("You must select a codec to use!");
 			return;
 		}
-		if(selectedCodec === 'LZ COMPRESS'){
-					codecs.format[selectedCodec](codecDirection, resizeTextArea)
-					return;
-			}
-		codecs.format[selectedCodec](codecDirection);
+		codecs.format[selectedCodec].fn(codecDirection);
+		resizeTextArea();
 		
 	};
 

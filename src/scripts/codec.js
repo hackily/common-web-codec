@@ -70,14 +70,13 @@ const translateAscii = function(isEncode){
 	output.value = payload;
 }
 
-const lzCompress = function(isEncode, fn){
+const lzCompress = function(isEncode){
 	mapIO(isEncode);
 	if(isEncode){
 		output.value = "Please wait while we compress your message.";
 		lz.compressAsync(input, {'outputEncoding': 'Base64'}, function(result, error){
 		if(error === undefined) output.value = result;
 		if(error) output.value = 'Compression Error: ' + error.message
-		fn();
 	})
 
 	}
@@ -93,18 +92,18 @@ const lzCompress = function(isEncode, fn){
 
 const translateTime = function(isEncode) {
 	mapIO(isEncode);
-	const payload = isEncode ? new Date(+input).toString() : new Date(input).getTime();
+	const payload = isEncode ? new Date(input).getTime() : new Date(+input).toString();
 	output.value = payload;
 }
 
 exports.format = {
-		"JWT": translateJwt,
-		"BASE64": translateBase64,
-		"HEX": translateHex,
-		"URI": translateUri,	
-		"BINARY": translateBinary,
-		"ASCII": translateAscii,
-		"LZ COMPRESS": lzCompress,
-		"TIMESTAMP": translateTime
+		"JWT": {"encode": "payload", "decode": "JSON Web Token", "fn": translateJwt},
+		"BASE64": {"encode": "text", "decode": "base64", "fn": translateBase64},
+		"HEX": {"encode": "decimal", "decode": "hexadecimal", "fn":translateHex},
+		"URI": {"encode": "url", "decode": "url-encoded", "fn":translateUri},
+		"BINARY": {"encode": "decimal", "decode": "binary", "fn":translateBinary},
+		"ASCII": {"encode": "text", "decode": "ASCII", "fn":translateAscii},
+		"LZ COMPRESS": {"encode": "text", "decode": "LZ compressed string", "fn":lzCompress},
+		"TIMESTAMP": {"encode": "date-time", "decode": "milliseconds since January 1, 1970", "fn":translateTime}
 };
 
